@@ -1,0 +1,399 @@
+
+
+body {
+  color: #000;
+  font-weight:bold;
+}
+
+h1 {
+  font-size:125px;
+  color:#9e0101;
+}
+
+h2 {
+  font-size:50px;
+  color:#9e0101;
+  text-align: center;
+ 
+}
+
+h3 {
+  font-size:50px;
+  color:#9e0101;
+  font-weight:bold;
+  text-transform: uppercase;
+}
+
+
+/*Top Menu the first one is the box it's in, second is the toggle icon*/
+#this {
+  position:absolute;
+  z-index:10000;
+  float: right;
+  width:100%;
+  padding-left:20px;
+  top:0px;
+
+}
+
+#text {
+  position:relative;
+}
+
+#toggle {
+  display: block;
+  width: 28px;
+  height: 30px;
+  margin: 30px auto 10px;
+  float:left;
+  bottom:10%;
+}
+
+#toggle span:after,
+#toggle span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -9px;
+}
+#toggle span:after{
+  top: 9px;
+}
+#toggle span {
+  position: relative;
+  display: block;
+}
+
+#toggle span,
+#toggle span:after,
+#toggle span:before {
+  width: 100%;
+  height: 5px;
+  background-color: #888;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 2px;
+}
+
+/* on activation */
+#toggle.on span {
+ background-color: rgb(0, 0, 0);
+}
+#toggle.on span:before {
+  transform: rotate(45deg) translate(5px, 5px);
+  background-color: rgb(0, 0, 0);
+}
+#toggle.on span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
+  background-color: rgb(0, 0, 0);
+}
+#toggle.on + #menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+#toggle span, #toggle span:after, #toggle span:before{
+
+  background-color: rgb(0, 0, 0); 
+}
+
+
+/* menu appearance*/
+
+#menu {
+  position: relative;
+  color: #999;
+  width: 200px;
+  padding: 2px;
+  margin: auto;
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  text-align: center;
+  border-radius: 4px;
+  background: rgba(0,0,0);
+  visibility: hidden;
+  transition: opacity .4s;
+  float:right;
+}
+
+ul, li, li a {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+li a {
+  padding: 5px;
+  color: #000;
+  text-decoration: none;
+  transition: all .2s;
+}
+li a:hover,
+li a:focus {
+  background: #9e0101;
+  color: #fff;
+}
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  
+  position: relative;
+
+}
+
+.mySlides {
+    display: none;
+
+}
+}
+
+.slides {
+   display: none;
+
+}
+
+
+
+/* three columns below slideshow*/
+.col-lg-4 {
+  text-align: center;
+  margin-top:50px;
+  margin-bottom:50px;
+}
+
+.h2 {
+  font-weight: normal;
+}
+.col-lg-4 p {
+  margin-right: .75rem;
+}
+
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@media (max-width:620px) {
+ #this {
+    position:relative;
+    float:left;
+    width:100%;
+    height:100px;
+ }
+
+}
+
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+ 
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+
+
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+
+}
+
+
+/* days counter */
+
+#water {
+  position:absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
+}
+
+
+#water #body {
+  color: #000;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight:normal;
+ 
+}
+
+#water #days-since {
+ margin:auto;
+}
+
+#water #day-counter {
+  color: #9e0101;
+  font-size: 94px;
+  font-weight: bold;
+}
+
+/*media queries for responsive text*/ 
+@media (max-width:620px) {
+ #water #day-counter{
+ font-size:60px;
+ }
+
+ #water #body {
+  font-size:15px;
+ }
+}
+
+
+
+/* third row with "timeline" */
+#f1_container {
+  position: relative;
+  margin: 10px auto;
+  width: 400px;
+  height: 293px;
+  z-index: 1;
+}
+#f1_container {
+  perspective: 1000;
+}
+#f1_card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+}
+#f1_container:hover #f1_card {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #c1c1c1;
+}
+
+.back.face.center p{
+  font-weight: normal;
+  font-size: 15px;
+}
+
+#last 
+{
+  font-size:25px;
+}
+
+#last a {
+  color:#9e0101;
+}
+
+
+.col-lg-4 {
+   background-image: url(http://www.publicdomainpictures.net/pictures/130000/velka/gray-top-gradient-background.jpg);
+   height:350px;
+}
+
+/* footer */ 
+footer {
+  font-weight:normal;
+}
+/*DO NOT TOUCH ABOVE*/
+
+/* DELETE THIS CSS */
+#visualization {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/*DO NOT TOUCH BELOW */
+
+/* last page CSS */
+#help {
+  position:absolute;
+  bottom: 30%;
+  right: 30%;
+  text-align: center;
+  color: #000;
+  font-size: 25px;
+  font-weight:normal;
+  column-fill: #000;
+
+}
+
+#help a{
+  color:#9e0101;
+}
+
+.links {
+  background-color: rgba(141, 142, 146, 0.86);
+  padding: 10px 5px 10px 5px;
+  border-radius: 150px;
+  width: auto;
+}
+
+@media (max-width:1300px) {
+ #help h3{
+ font-size:20px;
+ }
+
+#help {
+  font-size: 15px;
+  margin-right:50px;
+}
+
+.slides {
+  visibility: hidden;
+}
+}
+
+@media (max-width:900px) {
+ #help {
+  top:200px;
+  margin: auto;
+ }
+}
+
+@media (max-width:740px) {
+ #help h3{
+ font-size:20px;
+ }
+}
+
+#help {
+  font-size: 15px;
+  bottom:10%;
+}
+
+@media (max-width:574px) {
+ #help h3{
+ font-size:15px;
+ }
+
+#help {
+  font-size: 10px;
+}
+}
+
+@media (max-width:440px) {
+
+#help {
+  top:200px;
+}
+}
+
+
+

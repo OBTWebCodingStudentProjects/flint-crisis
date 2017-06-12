@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Flint Michigan Water Crisis</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://www.google.com/jsapi'></script>
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+  </head>
+  <body>
+  <div id="this"> 
+  <a href="#menu" id="toggle"><span></span></a>
+
+  <div id="menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="page2.html">The Problem</a></li>
+      <li><a href="lastpage.html">The Solution</a></li>
+    </ul>
+  </div>
+  </div>
+<div class="container">
+
+<div class="row featurette">
+      
+  </div>
+
+     
+
+<!-- DO NOT TOUCH ABOVE THIS -->
+<div id="text"><h2 class="featurette-heading"> What are the Lead Levels in Your State? <br><span class="text-muted"><i>Scroll Over to Find Out</i></span> </h2></div>
+  <div id='visualization'></div>
+  <div id="message"></div>
+
+<!-- end -->
+
+
+  <!-- DO NOT TOUCH THIS -->
+
+      <hr class="featurette-divider">
+<div class="container">
+     
+      <div class="row featurette">
+        <div class="col-md-7 push-md-5">
+          <h2 class="featurette-heading">Effects of Lead Poisoning <span class="text-muted"></span></h2>
+          <p class="lead">Lead is a highly toxic metal and a very strong poison. Lead poisoning is a serious and sometimes fatal condition and occurs when lead builds up in the body. Lead poisoning is more harmful to children because their brains and nervous systems are still developing. While poisoning can be treated, damage caused cannot be reversed.  </p>
+        </div>
+        <div class="col-md-5 pull-md-7">
+          <img class="featurette-image img-fluid mx-auto" src="images/flintboy.jpg" alt="Little Boy in Flint Michigan">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">How You Can Help</h2>
+          <p class="lead">The average family in Flint, the average American uses 151 bottles of water per day. Sending even 100,000 water bottles to Flint each day would only be enough to give one bottle to every resident. You can help by donating money to organizations that are providing filters and other water clarification services to residents.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" src="images/flintkids.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+  
+  
+
+
+   <hr class="featurette-divider">
+        <!-- FOOTER -->
+       <footer>
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>Water is a Human Right </p>
+      </footer>
+
+   </div> <!-- /.container -->
+<!-- END DO NOT TOUCH -->
+
+    <!-- Bootstrap core JavaScript-->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+
+<script type="text/javascript">
+var theToggle = document.getElementById('toggle');
+
+// based on Todd Motto functions
+// http://toddmotto.com/labs/reusable-js/
+
+// hasClass
+function hasClass(elem, className) {
+  return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+// addClass
+function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+      elem.className += ' ' + className;
+    }
+}
+// removeClass
+function removeClass(elem, className) {
+  var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+  if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}
+// toggleClass
+function toggleClass(elem, className) {
+  var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}
+
+theToggle.onclick = function() {
+   toggleClass(this, 'on');
+   return false;
+}
+</script>
+
+<script type="text/javascript">
+google.load('visualization', '1', {'packages': ['geochart']});
+google.setOnLoadCallback(drawVisualization);
+
+  function drawVisualization() {var data = new google.visualization.DataTable();
+
+ data.addColumn('string', 'Country');
+ data.addColumn('number', 'Value'); 
+ data.addColumn({type:'string', role:'tooltip'});var ivalue = new Array(); var name = new Array();
+
+ data.addRows([[{v:'US-AK',f:'Alaska'},57,'15.5ppb - 715ppb']]);
+ ivalue['US-AK'] = 'Obama (D)  will <span style="color:#444; font-weight:bold;">win</span> in Alaska.';
+
+ data.addRows([[{v:'US-AL',f:'Alabama'},4,'18.3ppb - 95ppb']]);
+ ivalue['US-AL'] = 'Obama (D) will win in Alabama';
+
+ data.addRows([[{v:'US-AR',f:'Arkansas'},13,'15.6ppb - 647.2ppb']]);
+ ivalue['US-AR'] = 'Obama (D) will win in Arkansas';
+
+ data.addRows([[{v:'US-AZ',f:'Arizona'},34,'17ppb - 109ppb']]);
+ ivalue['US-AZ'] = 'Obama (D) will win in Arizona';
+
+ data.addRows([[{v:'US-CA',f:'California'},112,'15.8ppb - 13,200ppb']]);
+ ivalue['US-CA'] = 'Obama (D) will win in California';
+
+ data.addRows([[{v:'US-CO',f:'Colorado'},63,'16ppb - 117ppb']]);
+ ivalue['US-CO'] = 'Obama (D) will win in Colorado';
+
+ data.addRows([[{v:'US-CT',f:'Connecticut'},77,' 16ppb-650ppb']]);
+ ivalue['US-CT'] = 'Obama (D) will win in Connecticut';
+
+ data.addRows([[{v:'US-DE',f:'Delaware'},24,'15.9ppb - 67.4ppb']]);
+ ivalue['US-DE'] = 'Obama (D) will win in Delaware';
+ name['US-DE'] = 'Delaware';
+
+ data.addRows([[{v:'US-FL',f:'Florida'},80,'15.5ppb - 340ppb)']]);
+ ivalue['US-FL'] = 'Obama (D) will win in Florida';
+
+ data.addRows([[{v:'US-GA',f:'Georgia'},81,'15.5ppb - 263.8ppb']]);
+ ivalue['US-GA'] = 'Obama (D) will win in Georgia';
+
+ data.addRows([[{v:'US-HI',f:'Hawaii'},1,'21.6pp - 21.6ppb']]);
+ ivalue['US-HI'] = 'Obama (D) will win in Hawaii';
+
+ data.addRows([[{v:'US-IA',f:'Iowa'},30,'16ppb - 176ppb ']]);
+ ivalue['US-IA'] = 'Obama (D) will win in Iowa';
+
+ data.addRows([[{v:'US-ID',f:'Idaho'},50,' 15.5pp - 990ppb  ']]);
+ ivalue['US-ID'] = 'Obama (D) will win in Idaho';
+
+ data.addRows([[{v:'US-IL',f:'Illinois'},66,'15.5ppb - 127ppb']]);
+ ivalue['US-IL'] = 'Obama (D) will win in Illinois';
+
+ data.addRows([[{v:'US-IN',f:'Indiana'},49,'16.1ppb - 170ppb']]);
+ ivalue['US-IN'] = 'Obama (D) will win in Indiana';
+
+ data.addRows([[{v:'US-KS',f:'Kansas'},15,'Obama (D)']]);
+ ivalue['US-KS'] = 'Obama (D) will win in Kansas';
+
+ data.addRows([[{v:'US-KY',f:'Kentucky'},1,'21.6ppb - 21.6ppb']]);
+ ivalue['US-KY'] = 'Obama (D) will win in Kentucky';
+
+ data.addRows([[{v:'US-LA',f:'Louisiana'},23,'17ppb - 48ppb']]);
+ ivalue['US-LA'] = 'Obama (D) will win in Louisiana';
+
+ data.addRows([[{v:'US-MA',f:'Massachusetts'},74,'15.5ppb - 490ppb']]);
+ ivalue['US-MA'] = 'Obama (D) will win in Massachusetts';
+
+ data.addRows([[{v:'US-MD',f:'Maryland'},52,'15.7ppb - 339ppb']]);
+ ivalue['US-MD'] = 'Obama (D) will win in Maryland';
+
+ data.addRows([[{v:'US-ME',f:'Maine'},20,'16ppb - 635ppb']]);
+ ivalue['US-ME'] = 'Obama (D) will win in Maine ';
+
+ data.addRows([[{v:'US-MI',f:'Michigan'},200,'16ppb - 4,700ppb']]);
+ ivalue['US-MI'] = 'Obama (D) will win in Michigan';
+
+ data.addRows([[{v:'US-MN',f:'Minnesota'},23,'16ppb - 294ppb']]);
+ ivalue['US-MN'] = 'Obama (D) will win in Minnesota';
+
+ data.addRows([[{v:'US-MO',f:'Missouri'},34,'15.6ppb - 700ppb']]);
+ ivalue['US-MO'] = 'Obama (D) will win in Missouri';
+
+ data.addRows([[{v:'US-MS',f:'Mississippi'},27,'15.7ppb - 2,413ppb']]);
+ ivalue['US-MS'] = 'Obama (D) will win in Mississippi';
+
+ data.addRows([[{v:'US-MT',f:'Montana'},18,'16ppb - 494ppb']]);
+ ivalue['US-MT'] = 'Obama (D) will win in Montana';
+
+ data.addRows([[{v:'US-NC',f:'North Carolina'},26,'16ppb - 240ppb']]);
+ ivalue['US-NC'] = 'Romney (R) will win in North Carolina';
+
+ data.addRows([[{v:'US-ND',f:'North Dakota'},8,'15.8ppb-101ppb']]);
+ ivalue['US-ND'] = 'Romney (R) will win in North Dakota';
+
+ data.addRows([[{v:'US-NE',f:'Nebraska'},15,'15.9ppb - 79.32ppb']]);
+ ivalue['US-NE'] = 'Romney (R) will win in Nebraska';
+
+ data.addRows([[{v:'US-NH',f:'New Hampshire'},55,'16ppb - 1,660ppb']]);
+ ivalue['US-NH'] = 'Romney (R) will win in New Hampshire';
+
+ data.addRows([[{v:'US-NJ',f:'New Jersey'},111,'15.5ppb - 600ppb']]);
+ ivalue['US-NJ'] = 'Romney (R) will win in New Jersey';
+
+ data.addRows([[{v:'US-NM',f:'New Mexico'},21,'15.9ppb - 280ppb']]);
+ ivalue['US-NM'] = 'Romney (R) will win in New Mexico';
+
+ data.addRows([[{v:'US-NV',f:'Nevada'},4,'16ppb - 71ppb']]);
+ ivalue['US-NV'] = 'Romney (R) will win in Nevada';
+
+ data.addRows([[{v:'US-NY',f:'New York'},33,'15.5ppb - 2,300ppb']]);
+ ivalue['US-NY'] = 'Romney (R) will win in New York';
+
+ data.addRows([[{v:'US-OH',f:'Ohio'},61,'16.1ppb - 162ppb']]);
+ ivalue['US-OH'] = 'Romney (R) will win in Ohio';
+
+ data.addRows([[{v:'US-OK',f:'Oklahoma'},57,'15.5ppb - 1,190ppb']]);
+ ivalue['US-OK'] = 'Romney (R) will win in Oklahoma';
+
+ data.addRows([[{v:'US-OR',f:'Oregon'},59,'15.9ppb - 58ppb']]);
+ ivalue['US-OR'] = 'Romney (R) will win in Oregon';
+
+ data.addRows([[{v:'US-PA',f:'Pennsylvania'},157,'15.5ppb - 1,273ppb']]);
+ ivalue['US-PA'] = 'Romney (R) will win in Pennsylvania';
+
+ data.addRows([[{v:'US-RI',f:'Rhode Island'},27,'16ppb - 97ppb']]);
+ ivalue['US-RI'] = 'Romney (R) will win in Rhode Island';
+
+ data.addRows([[{v:'US-SC',f:'South Carolina'},19,'15.5ppb - 460ppb']]);
+ ivalue['US-SC'] = 'Romney (R) will win in South Carolina';
+
+ data.addRows([[{v:'US-SD',f:'South Dakota'},1,'33ppb - 33ppb']]);
+ ivalue['US-SD'] = 'Romney (R) will win in South Dakota';
+
+ data.addRows([[{v:'US-TN',f:'Tennessee'},11,'16ppb - 8ppb']]);
+ ivalue['US-TN'] = 'Romney (R) will win in Tennessee';
+
+ data.addRows([[{v:'US-TX',f:'Texas'},183,'15.5ppb - 600ppb']]);
+ ivalue['US-TX'] = 'People are Undecided in Texas';
+
+ data.addRows([[{v:'US-UT',f:'Utah'},11,'15.9ppb-100ppb']]);
+ ivalue['US-UT'] = 'People are Undecided in Utah';
+
+ data.addRows([[{v:'US-VA',f:'Virginia'},65,'16ppb - 4,100ppb']]);
+ ivalue['US-VA'] = 'People are Undecided in Virginia';
+
+ data.addRows([[{v:'US-VT',f:'Vermont'},74,'16ppb - 476ppb']]);
+ ivalue['US-VT'] = 'People are Undecided in Vermont';
+
+ data.addRows([[{v:'US-WA',f:'Washington'},40,'16ppb - 270ppb']]);
+ ivalue['US-WA'] = 'People are Undecided in Washington';
+
+ data.addRows([[{v:'US-WI',f:'Wisconsin'},94,'15.5ppb - 12,465ppb']]);
+ ivalue['US-WI'] = 'People are Undecided in Wisconsin';
+
+ data.addRows([[{v:'US-WV',f:'West Virginia'},19,'15.8ppb - 489ppb']]);
+ ivalue['US-WV'] = 'People are Undecided in West Virginia';
+
+ data.addRows([[{v:'US-WY',f:'Wyoming'},25,'16ppb - 215ppb']]);
+ ivalue['US-WY'] = 'People are Undecided in Wyoming';
+
+ var options = {
+ backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },
+ colorAxis:  {minValue: 0, maxValue: 200,  colors: ['#ECF1F5','#D9E4EB','#C6D7E1','#B3CAD7','#A0BDCD','#8DAFC3','#7AA2B9','#6795AF','#5488A5','#417B9B','#2E6E91','#2A6484','#265B77','#22516A','#1E465D','#1A3C50','#153242','#112835','#0D1E28','#ECF1F5','#D9E4EB','#C6D7E1','#B3CAD7','#A0BDCD','#8DAFC3','#7AA2B9','#6795AF','#5488A5','#417B9B','#2E6E91','#2A6484','#265B77','#22516A','#1E465D','#1A3C50','#153242','#112835','#0D1E28',]},
+ legend: 'none',  
+ backgroundColor: {fill:'#FFFFFF',stroke:'#FFFFFF' ,strokeWidth:0 },  
+ datalessRegionColor: '#f5f5f5',
+ displayMode: 'regions', 
+ enableRegionInteractivity: 'true', 
+ resolution: 'provinces',
+ sizeAxis: {minValue: 1, maxValue:1,minSize:10,  maxSize: 10},
+ region:'US',
+ keepAspectRatio: true,
+ width:110 + "%",
+ height:110 + '%',
+ tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}  
+ };
+  var chart = new google.visualization.GeoChart(document.getElementById('visualization')); 
+  google.visualization.events.addListener(chart, 'select', function() {
+  var selection = chart.getSelection();
+  if (selection.length == 1) {
+  var selectedRow = selection[0].row;
+  var selectedRegion = data.getValue(selectedRow, 0);
+  if(ivalue[selectedRegion] != '') {document.getElementById('message').innerHTML = ivalue[selectedRegion];}
+  if(name[selectedRegion] != '') {document.getElementById('name').innerHTML = name[selectedRegion];}
+  }
+  });
+ chart.draw(data, options);
+
+
+
+  go();
+
+  window.addEventListener('resize', go);
+
+  function go(){
+    chart.draw(data, options);
+  }
+ }
+ </script>
+
+
+<!-- END DELETE -->
+
+  </body>
+</html>
